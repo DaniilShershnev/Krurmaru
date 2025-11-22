@@ -1,0 +1,372 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+
+\title{Задача 3. Построение профиля струны \\ (Детальное решение)}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Условие задачи}
+
+Построить профиль бесконечной струны для волнового уравнения:
+\begin{equation}
+\begin{cases}
+u_{tt} = c^2 u_{xx} \\
+u|_{t=0} = \varphi(x) \text{ (треугольный профиль по рис. 9)} \\
+u_t|_{t=0} = 0
+\end{cases}
+\end{equation}
+
+где начальная форма струны $\varphi(x)$ задана графиком:
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+    % Оси
+    \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+    \draw[->] (0,-0.3) -- (0,2.5) node[above] {};
+
+    % Треугольный профиль
+    \draw[very thick, blue] (-2,0) -- (0,2) -- (2,0);
+
+    % Отметки на оси x
+    \draw (-2,0.05) -- (-2,-0.05) node[below] {$-l$};
+    \draw (-0.5,0.05) -- (-0.5,-0.05) node[below] {$-\frac{l}{4}$};
+    \draw (0,0.05) -- (0,-0.05) node[below] {$0$};
+    \draw (0.5,0.05) -- (0.5,-0.05) node[below] {$\frac{l}{4}$};
+    \draw (2,0.05) -- (2,-0.05) node[below] {$l$};
+
+    % Пунктирные линии
+    \draw[dashed, gray] (-0.5,0) -- (-0.5,1.5);
+    \draw[dashed, gray] (0.5,0) -- (0.5,1.5);
+    \draw[dashed, gray] (-0.5,1.5) -- (0.5,1.5);
+    \draw[dashed, gray] (0,2) -- (0.3,2);
+
+    % Отметки высоты
+    \node[right] at (0.3,2) {$h$};
+    \node[right] at (0.5,1.5) {$\frac{3h}{4}$};
+
+    % Точки
+    \fill (0,2) circle (1.5pt);
+    \fill (-2,0) circle (1.5pt);
+    \fill (2,0) circle (1.5pt);
+
+    \node at (0,2.8) {Рис. 9: Начальный профиль струны};
+\end{tikzpicture}
+\end{center}
+
+\section*{РЕШЕНИЕ}
+
+\subsection*{Шаг 1. Запись начальной функции}
+
+Из графика видно, что начальная форма струны представляет собой \textbf{треугольник}:
+\begin{itemize}
+    \item Вершина в точке $x = 0$ с высотой $h$
+    \item Основание от $x = -l$ до $x = l$
+    \item Вне этой области струна находится в положении равновесия
+\end{itemize}
+
+Математическая запись начального профиля:
+\begin{equation}
+\boxed{\varphi(x) = \begin{cases}
+h\left(1 - \dfrac{|x|}{l}\right), & \text{если } |x| \leq l \\[0.5em]
+0, & \text{если } |x| > l
+\end{cases}}
+\end{equation}
+
+\textbf{Проверка формулы:}
+\begin{itemize}
+    \item При $x = 0$: $\varphi(0) = h(1 - 0) = h$ \quad \checkmark
+    \item При $x = l/4$: $\varphi(l/4) = h(1 - 1/4) = 3h/4$ \quad \checkmark
+    \item При $x = l$: $\varphi(l) = h(1 - 1) = 0$ \quad \checkmark
+    \item При $x = -l/4$: $\varphi(-l/4) = h(1 - 1/4) = 3h/4$ \quad \checkmark
+    \item При $|x| > l$: $\varphi(x) = 0$ \quad \checkmark
+\end{itemize}
+
+\subsection*{Шаг 2. Применение формулы Даламбера}
+
+Для волнового уравнения $u_{tt} = c^2 u_{xx}$ с начальными условиями
+$$u|_{t=0} = \varphi(x), \quad u_t|_{t=0} = \psi(x)$$
+решение дается формулой Даламбера:
+$$u(x,t) = \frac{\varphi(x-ct) + \varphi(x+ct)}{2} + \frac{1}{2c}\int_{x-ct}^{x+ct} \psi(s)\,ds$$
+
+В нашем случае $\psi(x) = 0$ (начальная скорость равна нулю), поэтому:
+\begin{equation}
+\boxed{u(x,t) = \frac{\varphi(x-ct) + \varphi(x+ct)}{2}}
+\end{equation}
+
+\subsection*{Шаг 3. Физическая интерпретация}
+
+Формула $u(x,t) = \dfrac{\varphi(x-ct) + \varphi(x+ct)}{2}$ показывает, что решение представляет собой \textbf{суперпозицию} (наложение) двух волн:
+
+\begin{enumerate}
+    \item \textbf{Правобегущая волна:} $u_R(x,t) = \dfrac{1}{2}\varphi(x-ct)$
+    \begin{itemize}
+        \item Движется \textbf{вправо} со скоростью $c$
+        \item В момент времени $t$ центр находится в точке $x = ct$
+        \item Амплитуда $h/2$ (половина от исходной)
+        \item Занимает область $[ct - l, ct + l]$
+    \end{itemize}
+
+    \item \textbf{Левобегущая волна:} $u_L(x,t) = \dfrac{1}{2}\varphi(x+ct)$
+    \begin{itemize}
+        \item Движется \textbf{влево} со скоростью $c$
+        \item В момент времени $t$ центр находится в точке $x = -ct$
+        \item Амплитуда $h/2$ (половина от исходной)
+        \item Занимает область $[-ct - l, -ct + l]$
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Важно:} Исходный треугольник высотой $h$ \textbf{"распадается"} на две одинаковые половинки, каждая высотой $h/2$, которые расходятся в противоположных направлениях.
+
+\subsection*{Шаг 4. Построение профиля в различные моменты времени}
+
+Рассмотрим эволюцию профиля струны:
+
+\subsubsection*{Момент $t = 0$}
+
+$$u(x,0) = \frac{\varphi(x) + \varphi(x)}{2} = \varphi(x)$$
+
+Исходный треугольный профиль с вершиной высотой $h$ в точке $x = 0$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.3]
+    \draw[->] (-3.5,0) -- (3.5,0) node[right] {$x$};
+    \draw[->] (0,-0.3) -- (0,2.5);
+
+    \draw[very thick, blue] (-2,0) -- (0,2) -- (2,0);
+
+    \draw[dashed] (0,0) -- (0,2);
+    \node[right] at (0.1,2) {$h$};
+    \node[below] at (-2,-0.1) {$-l$};
+    \node[below] at (0,-0.1) {$0$};
+    \node[below] at (2,-0.1) {$l$};
+
+    \node at (0,2.7) {\textbf{$t = 0$}};
+\end{tikzpicture}
+\end{center}
+
+\subsubsection*{Момент $0 < t < \dfrac{l}{c}$ (волны перекрываются)}
+
+Две полуволны движутся в разные стороны и \textbf{частично накладываются} друг на друга.
+
+\textbf{Пример: $t = \dfrac{l}{4c}$}
+
+Правая волна: центр в $ct = l/4$, область $[-3l/4, 5l/4]$ \\
+Левая волна: центр в $-ct = -l/4$, область $[-5l/4, 3l/4]$
+
+Область перекрытия: $[-3l/4, 3l/4]$
+
+\begin{center}
+\begin{tikzpicture}[scale=1.3]
+    \draw[->] (-4,0) -- (4,0) node[right] {$x$};
+    \draw[->] (0,-0.3) -- (0,2.5);
+
+    % Правая волна (центр в 0.5)
+    \draw[thick, red, dashed] (-1.5,0) -- (0.5,1) -- (2.5,0);
+
+    % Левая волна (центр в -0.5)
+    \draw[thick, blue, dashed] (-2.5,0) -- (-0.5,1) -- (1.5,0);
+
+    % Суммарный профиль
+    \draw[very thick, purple] (-2.5,0) -- (-1.5,0) -- (-0.5,1) -- (0,1.5) -- (0.5,1) -- (1.5,0) -- (2.5,0);
+
+    \node[red, above right] at (0.5,1) {$\frac{h}{2}$};
+    \node[blue, above left] at (-0.5,1) {$\frac{h}{2}$};
+    \node[purple, above] at (0,1.5) {$\frac{3h}{4}$};
+
+    \node[below] at (0.5,-0.1) {$\frac{l}{4}$};
+    \node[below] at (-0.5,-0.1) {$-\frac{l}{4}$};
+
+    \draw[dashed, gray] (0,0) -- (0,1.5);
+
+    \node at (0,2.7) {\textbf{$t = \dfrac{l}{4c}$}};
+    \node[red] at (1.5,-0.5) {правая волна};
+    \node[blue] at (-1.5,-0.5) {левая волна};
+    \node[purple] at (0,-0.8) {суммарный профиль};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Вычисление высоты в точке $x = 0$ при $t = l/(4c)$:}
+\begin{align*}
+u(0, l/(4c)) &= \frac{1}{2}\left[\varphi(0 - l/4) + \varphi(0 + l/4)\right] \\
+&= \frac{1}{2}\left[\varphi(-l/4) + \varphi(l/4)\right] \\
+&= \frac{1}{2}\left[h(1-1/4) + h(1-1/4)\right] \\
+&= \frac{1}{2}\left[\frac{3h}{4} + \frac{3h}{4}\right] \\
+&= \frac{3h}{4} \quad \checkmark
+\end{align*}
+
+\subsubsection*{Момент $t = \dfrac{l}{c}$ (критический момент)}
+
+Волны \textbf{только касаются} в точке $x = 0$.
+
+Правая волна: центр в $ct = l$, область $[0, 2l]$ \\
+Левая волна: центр в $-ct = -l$, область $[-2l, 0]$
+
+\begin{center}
+\begin{tikzpicture}[scale=1.3]
+    \draw[->] (-4,0) -- (4,0) node[right] {$x$};
+    \draw[->] (0,-0.3) -- (0,2.5);
+
+    % Левая волна
+    \draw[very thick, blue] (-3,0) -- (-1,1) -- (0,0);
+
+    % Правая волна
+    \draw[very thick, red] (0,0) -- (1,1) -- (3,0);
+
+    \node[blue, above left] at (-1,1) {$\frac{h}{2}$};
+    \node[red, above right] at (1,1) {$\frac{h}{2}$};
+
+    \node[below] at (-2,-0.1) {$-2l$};
+    \node[below] at (-1,-0.1) {$-l$};
+    \node[below] at (0,-0.1) {$0$};
+    \node[below] at (1,-0.1) {$l$};
+    \node[below] at (2,-0.1) {$2l$};
+
+    \fill (0,0) circle (2pt);
+
+    \draw[<->, dashed] (-0.3,-0.5) -- (0.3,-0.5);
+    \node[below] at (0,-0.5) {\small точка касания};
+
+    \node at (0,2.7) {\textbf{$t = \dfrac{l}{c}$}};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Проверка:} В точке $x = 0$:
+\begin{align*}
+u(0, l/c) &= \frac{1}{2}\left[\varphi(0 - l) + \varphi(0 + l)\right] \\
+&= \frac{1}{2}\left[\varphi(-l) + \varphi(l)\right] \\
+&= \frac{1}{2}[0 + 0] = 0 \quad \checkmark
+\end{align*}
+
+\subsubsection*{Момент $t > \dfrac{l}{c}$ (волны разошлись)}
+
+Волны \textbf{полностью разделены}. Между ними образуется зазор, в котором $u = 0$.
+
+\textbf{Пример: $t = \dfrac{3l}{2c}$}
+
+Правая волна: центр в $ct = 3l/2$, область $[l/2, 5l/2]$ \\
+Левая волна: центр в $-ct = -3l/2$, область $[-5l/2, -l/2]$ \\
+Зазор: $(-l/2, l/2)$
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+    \draw[->] (-5,0) -- (5,0) node[right] {$x$};
+    \draw[->] (0,-0.3) -- (0,2.5);
+
+    % Левая волна
+    \draw[very thick, blue] (-4,0) -- (-2.5,1) -- (-1,0);
+
+    % Правая волна
+    \draw[very thick, red] (1,0) -- (2.5,1) -- (4,0);
+
+    % Зазор
+    \draw[very thick] (-1,0) -- (1,0);
+
+    \node[blue, above] at (-2.5,1) {$\frac{h}{2}$};
+    \node[red, above] at (2.5,1) {$\frac{h}{2}$};
+
+    \node[below] at (-2.5,-0.1) {$-\frac{3l}{2}$};
+    \node[below] at (2.5,-0.1) {$\frac{3l}{2}$};
+
+    \draw[<->, thick] (-0.8,-0.7) -- (0.8,-0.7);
+    \node[below] at (0,-0.7) {зазор: $u = 0$};
+
+    \node at (0,2.7) {\textbf{$t = \dfrac{3l}{2c}$}};
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Полная эволюция профиля (обзор)}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+    % t = 0
+    \begin{scope}[shift={(0,0)}]
+        \draw[->] (-2.5,0) -- (2.5,0) node[right] {\small $x$};
+        \draw[->] (0,-0.2) -- (0,2.2);
+        \draw[very thick, blue] (-1.5,0) -- (0,1.5) -- (1.5,0);
+        \node at (0,2.5) {\small $t = 0$};
+        \node[right, font=\tiny] at (0.1,1.5) {$h$};
+    \end{scope}
+
+    % t = l/(4c)
+    \begin{scope}[shift={(6,0)}]
+        \draw[->] (-2.5,0) -- (2.5,0) node[right] {\small $x$};
+        \draw[->] (0,-0.2) -- (0,2.2);
+        \draw[thick, purple] (-2,0) -- (-1,0) -- (-0.4,0.45) -- (0,1.13) -- (0.4,0.45) -- (1,0) -- (2,0);
+        \node at (0,2.5) {\small $t = \frac{l}{4c}$};
+        \node[font=\tiny] at (0,1.4) {$\frac{3h}{4}$};
+    \end{scope}
+
+    % t = l/c
+    \begin{scope}[shift={(0,-4)}]
+        \draw[->] (-2.5,0) -- (2.5,0) node[right] {\small $x$};
+        \draw[->] (0,-0.2) -- (0,2.2);
+        \draw[thick, blue] (-2.2,0) -- (-1,0.75) -- (0,0);
+        \draw[thick, red] (0,0) -- (1,0.75) -- (2.2,0);
+        \node at (0,2.5) {\small $t = \frac{l}{c}$};
+        \node[font=\tiny] at (-1,1) {$\frac{h}{2}$};
+        \node[font=\tiny] at (1,1) {$\frac{h}{2}$};
+    \end{scope}
+
+    % t > l/c
+    \begin{scope}[shift={(6,-4)}]
+        \draw[->] (-2.5,0) -- (2.5,0) node[right] {\small $x$};
+        \draw[->] (0,-0.2) -- (0,2.2);
+        \draw[thick, blue] (-2.2,0) -- (-1.5,0.75) -- (-0.8,0);
+        \draw[thick, red] (0.8,0) -- (1.5,0.75) -- (2.2,0);
+        \draw[thick] (-0.6,0) -- (0.6,0);
+        \node at (0,2.5) {\small $t > \frac{l}{c}$};
+        \node[font=\tiny] at (0,-0.5) {зазор};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\subsection*{ОТВЕТ}
+
+Решение задачи Коши:
+\begin{equation}
+\boxed{u(x,t) = \frac{1}{2}\left[\varphi(x-ct) + \varphi(x+ct)\right]}
+\end{equation}
+
+где начальный профиль:
+$$\varphi(x) = \begin{cases}
+h\left(1 - \dfrac{|x|}{l}\right), & |x| \leq l \\[0.5em]
+0, & |x| > l
+\end{cases}$$
+
+\subsection*{Выводы}
+
+\begin{enumerate}
+    \item Начальное треугольное возмущение \textbf{распадается} на две бегущие волны амплитудой $h/2$ каждая
+
+    \item Волны движутся в \textbf{противоположных направлениях} со скоростью $c$:
+    \begin{itemize}
+        \item Правая волна: центр в точке $x = ct$
+        \item Левая волна: центр в точке $x = -ct$
+    \end{itemize}
+
+    \item При $0 < t < l/c$: волны \textbf{перекрываются}, максимум профиля $3h/4$ в центре
+
+    \item При $t = l/c$: \textbf{критический момент} --- волны касаются в точке $x = 0$
+
+    \item При $t > l/c$: волны \textbf{полностью разошлись}, между ними зазор с $u = 0$
+
+    \item Каждая волна \textbf{сохраняет свою форму} при движении (свойство волнового уравнения)
+\end{enumerate}
+
+Это демонстрирует фундаментальный \textbf{принцип суперпозиции} для волнового уравнения: любое решение можно представить как сумму правобегущей и левобегущей волн.
+
+\end{document}

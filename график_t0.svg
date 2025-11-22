@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+<defs>
+    <style>
+        text { font-family: Arial, sans-serif; }
+        .title { font-size: 16px; font-weight: bold; }
+        .label { font-size: 14px; }
+        .small { font-size: 12px; }
+    </style>
+</defs>
+<line x1="9.25" y1="320" x2="790.75" y2="320" stroke="black" stroke-width="2" marker-end="url(#arrowX)"/>
+<line x1="400" y1="340" x2="400" y2="139.7" stroke="black" stroke-width="2" marker-end="url(#arrowY)"/>
+<defs>
+    <marker id="arrowX" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L9,3 z" fill="black" />
+    </marker>
+    <marker id="arrowY" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L9,3 z" fill="black" />
+    </marker>
+</defs>
+<polyline points="100.0,320.0 107.5,316.25 115.0,312.5 122.5,308.75 130.0,305.0 137.5,301.25 145.0,297.5 152.5,293.75 160.0,290.0 167.5,286.25 175.0,282.5 182.5,278.75 190.0,275.0 197.5,271.25 205.0,267.5 212.5,263.75 220.0,260.0 227.5,256.25 235.0,252.5 242.5,248.75 250.0,245.0 257.5,241.25 265.0,237.5 272.5,233.75 280.0,230.0 287.5,226.25 295.0,222.5 302.5,218.75 310.0,215.0 317.5,211.25 325.0,207.5 332.5,203.75 340.0,200.0 347.5,196.25 355.0,192.5 362.5,188.75 370.0,185.0 377.5,181.25 385.0,177.5 392.5,173.75 400.0,170.0 407.5,173.75 415.0,177.5 422.5,181.25 430.0,185.0 437.5,188.75 445.0,192.5 452.5,196.25 460.0,200.0 467.5,203.75 475.0,207.5 482.5,211.25 490.0,215.0 497.5,218.75 505.0,222.5 512.5,226.25 520.0,230.0 527.5,233.75 535.0,237.5 542.5,241.25 550.0,245.0 557.5,248.75 565.0,252.5 572.5,256.25 580.0,260.0 587.5,263.75 595.0,267.5 602.5,271.25 610.0,275.0 617.5,278.75 625.0,282.5 632.5,286.25 640.0,290.0 647.5,293.75 655.0,297.5 662.5,301.25 670.0,305.0 677.5,308.75 685.0,312.5 692.5,316.25 700.0,320.0" fill="none" stroke="blue" stroke-width="3"/>
+<line x1="100.0" y1="315" x2="100.0" y2="325" stroke="black" stroke-width="2"/>
+<text x="100.0" y="345" text-anchor="middle" class="label">-l</text>
+<line x1="400.0" y1="315" x2="400.0" y2="325" stroke="black" stroke-width="2"/>
+<text x="400.0" y="345" text-anchor="middle" class="label">0</text>
+<line x1="700.0" y1="315" x2="700.0" y2="325" stroke="black" stroke-width="2"/>
+<text x="700.0" y="345" text-anchor="middle" class="label">l</text>
+<line x1="400" y1="320" x2="400" y2="170.0" stroke="gray" stroke-width="1" stroke-dasharray="5,5"/>
+<text x="410" y="170.0" class="label">h</text>
+<text x="400" y="30" text-anchor="middle" class="title">t = 0 (начальный профиль)</text>
+</svg>

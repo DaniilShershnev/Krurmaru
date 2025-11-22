@@ -1,0 +1,557 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R 5 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 9 0 R >> >>
+   /MediaBox [0 0 595 842] /Contents 6 0 R >>
+endobj
+3 1 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 9 0 R >> >>
+   /MediaBox [0 0 595 842] /Contents 7 0 R >>
+endobj
+3 2 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 9 0 R >> >>
+   /MediaBox [0 0 595 842] /Contents 8 0 R >>
+endobj
+6 0 obj
+<< /Length 2223 >>
+stream
+BT
+/F1 18 Tf
+200 800 Td
+(Kontrolnaya rabota #1) Tj
+ET
+BT
+/F1 14 Tf
+150 770 Td
+(Uravneniya matematicheskoi fiziki) Tj
+ET
+BT
+/F1 14 Tf
+50 710 Td
+(Zadacha 1. Klassifikatsiya uravneniy vtorogo poryadka) Tj
+ET
+BT
+/F1 11 Tf
+50 680 Td
+(Uslovie: Reshit uravnenie, klassifitsirovat ego,) Tj
+ET
+BT
+/F1 11 Tf
+50 660 Td
+(privesti k kanonicheskomu vidu i naiti obshee reshenie:) Tj
+ET
+BT
+/F1 11 Tf
+50 635 Td
+((x - y)u_xy - u_x + u_y = 0) Tj
+ET
+BT
+/F1 12 Tf
+50 595 Td
+(RESHENIE:) Tj
+ET
+BT
+/F1 11 Tf
+50 565 Td
+(Shag 1. Klassifikatsiya uravneniya.) Tj
+ET
+BT
+/F1 10 Tf
+50 540 Td
+(Zapishem uravnenie v standartnoi forme:) Tj
+ET
+BT
+/F1 10 Tf
+50 520 Td
+(A*u_xx + 2B*u_xy + C*u_yy + D*u_x + E*u_y + F*u = G) Tj
+ET
+BT
+/F1 10 Tf
+50 495 Td
+(V nashem sluchae:) Tj
+ET
+BT
+/F1 9 Tf
+50 477 Td
+(A = 0, B = (x-y)/2, C = 0, D = -1, E = 1, F = 0, G = 0) Tj
+ET
+BT
+/F1 10 Tf
+50 452 Td
+(Diskriminant: Delta = B^2 - AC = (x-y)^2/4 > 0 pri x != y) Tj
+ET
+BT
+/F1 11 Tf
+50 427 Td
+(VYVOD: Uravnenie GIPERBOLICHESKOGO TIPA pri x != y.) Tj
+ET
+BT
+/F1 11 Tf
+50 392 Td
+(Shag 2. Nakhozhdenie kharakteristik.) Tj
+ET
+BT
+/F1 10 Tf
+50 367 Td
+(Dlya uravneniya s A = 0 i C = 0 kharakteristiki:) Tj
+ET
+BT
+/F1 10 Tf
+50 347 Td
+(xi = x = const, eta = y = const) Tj
+ET
+BT
+/F1 11 Tf
+50 322 Td
+(VYVOD: Uravnenie uzhe zapisano v kanonicheskikh peremennykh.) Tj
+ET
+BT
+/F1 11 Tf
+50 287 Td
+(Shag 3. Nakhozhdenie obshego resheniya.) Tj
+ET
+BT
+/F1 10 Tf
+50 257 Td
+(a) Resheniya vida u = f(x) + g(y):) Tj
+ET
+BT
+/F1 9 Tf
+70 237 Td
+(Esli u = f(x) + g(y), to g'(y) = f'(x) = const = C) Tj
+ET
+BT
+/F1 9 Tf
+70 219 Td
+(Poluchaem: u_1 = C(x + y) + D) Tj
+ET
+BT
+/F1 10 Tf
+50 189 Td
+(b) Resheniya vida u = F(xy):) Tj
+ET
+BT
+/F1 9 Tf
+70 169 Td
+(Posle vychisleniy: s*F''(s) + 2F'(s) = 0) Tj
+ET
+BT
+/F1 9 Tf
+70 151 Td
+(Reshenie: F(s) = -A/s + B = -A/(xy) + B) Tj
+ET
+BT
+/F1 9 Tf
+70 133 Td
+(Poluchaem: u_2 = B/(xy) + const) Tj
+ET
+BT
+/F1 10 Tf
+50 103 Td
+(c) Resheniya vida u = G(x/y):) Tj
+ET
+BT
+/F1 9 Tf
+70 83 Td
+(Poluchaem: u_3 = Cy/(x-y) + D) Tj
+ET
+BT
+/F1 10 Tf
+50 53 Td
+(d) Analogichno: u_4 = Kx/(x-y)) Tj
+ET
+BT
+/F1 12 Tf
+50 13 Td
+(OBSHEE RESHENIE:) Tj
+ET
+BT
+/F1 11 Tf
+70 -12 Td
+(u(x,y) = A(x+y) + B/(xy) + (Cx + Dy)/(x-y) + E) Tj
+ET
+BT
+/F1 10 Tf
+70 -32 Td
+(gde A, B, C, D, E - proizvolnye konstanty.) Tj
+ET
+
+endstream
+endobj
+7 0 obj
+<< /Length 1836 >>
+stream
+BT
+/F1 14 Tf
+50 800 Td
+(Zadacha 2. Zadacha Koshi dlya volnovogo uravneniya) Tj
+ET
+BT
+/F1 11 Tf
+50 770 Td
+(Uslovie: Reshit zadachu Koshi:) Tj
+ET
+BT
+/F1 10 Tf
+70 745 Td
+(u_tt = 25*u_xx + sin(x)) Tj
+ET
+BT
+/F1 10 Tf
+70 727 Td
+(u|_(t=0) = 1) Tj
+ET
+BT
+/F1 10 Tf
+70 709 Td
+(u_t|_(t=0) = 1) Tj
+ET
+BT
+/F1 12 Tf
+50 674 Td
+(RESHENIE:) Tj
+ET
+BT
+/F1 10 Tf
+50 644 Td
+(Uravnenie yavlyaetsya neodnorodnym volnovym uravneniem) Tj
+ET
+BT
+/F1 10 Tf
+50 626 Td
+(so skorostyu rasprostraneniya c = 5.) Tj
+ET
+BT
+/F1 11 Tf
+50 596 Td
+(Shag 1. Reshenie odnorodnogo uravneniya.) Tj
+ET
+BT
+/F1 10 Tf
+50 571 Td
+(Po formule Dalambera dlya odnorodnogo uravneniya:) Tj
+ET
+BT
+/F1 9 Tf
+70 551 Td
+(u_0(x,t) = [phi(x-ct) + phi(x+ct)]/2 + (1/2c)*integral) Tj
+ET
+BT
+/F1 10 Tf
+50 521 Td
+(S nachalnymi usloviyami phi(x) = 1, psi(x) = 1:) Tj
+ET
+BT
+/F1 10 Tf
+70 501 Td
+(u_0(x,t) = 1 + t) Tj
+ET
+BT
+/F1 11 Tf
+50 466 Td
+(Shag 2. Uchet neodnorodnosti (integral Dyumelya).) Tj
+ET
+BT
+/F1 10 Tf
+50 441 Td
+(Dlya neodnorodnogo uravneniya s f(x,t) = sin(x):) Tj
+ET
+BT
+/F1 9 Tf
+70 421 Td
+(Vychislyaya integraly, poluchaem:) Tj
+ET
+BT
+/F1 9 Tf
+70 403 Td
+(u_f(x,t) = (sin x)/25 * (1 - cos(5t))) Tj
+ET
+BT
+/F1 11 Tf
+50 368 Td
+(Shag 3. Polnoe reshenie.) Tj
+ET
+BT
+/F1 10 Tf
+50 343 Td
+(u(x,t) = u_0(x,t) + u_f(x,t)) Tj
+ET
+BT
+/F1 12 Tf
+50 308 Td
+(OTVET:) Tj
+ET
+BT
+/F1 11 Tf
+70 283 Td
+(u(x,t) = 1 + t + (sin x)/25 * (1 - cos(5t))) Tj
+ET
+BT
+/F1 11 Tf
+50 243 Td
+(PROVERKA RESHENIYA:) Tj
+ET
+BT
+/F1 10 Tf
+50 218 Td
+(Nachalnye usloviya:) Tj
+ET
+BT
+/F1 9 Tf
+70 198 Td
+(u(x,0) = 1 + 0 + (sin x)/25 * 0 = 1  [OK]) Tj
+ET
+BT
+/F1 9 Tf
+70 180 Td
+(u_t(x,0) = 1 + (sin x)/5 * sin(0) = 1  [OK]) Tj
+ET
+BT
+/F1 10 Tf
+50 150 Td
+(Uravnenie:) Tj
+ET
+BT
+/F1 9 Tf
+70 130 Td
+(u_tt = -sin x * cos(5t)) Tj
+ET
+BT
+/F1 9 Tf
+70 112 Td
+(25*u_xx = -sin x * (1 - cos(5t))) Tj
+ET
+BT
+/F1 9 Tf
+70 94 Td
+(u_tt - 25*u_xx = sin x  [OK]) Tj
+ET
+
+endstream
+endobj
+8 0 obj
+<< /Length 2721 >>
+stream
+BT
+/F1 14 Tf
+50 800 Td
+(Zadacha 3. Postroenie profilya struny) Tj
+ET
+BT
+/F1 11 Tf
+50 770 Td
+(Uslovie: Postroit profil struny dlya volnovogo uravneniya:) Tj
+ET
+BT
+/F1 10 Tf
+70 745 Td
+(u_tt = c^2 * u_xx) Tj
+ET
+BT
+/F1 10 Tf
+70 727 Td
+(u|_(t=0) = phi(x) (treugolnyi profil)) Tj
+ET
+BT
+/F1 10 Tf
+70 709 Td
+(u_t|_(t=0) = 0) Tj
+ET
+BT
+/F1 12 Tf
+50 674 Td
+(RESHENIE:) Tj
+ET
+BT
+/F1 11 Tf
+50 644 Td
+(Shag 1. Zapis nachalnoi funktsii.) Tj
+ET
+BT
+/F1 10 Tf
+50 619 Td
+(Iz grafika (ris. 9) nachalnaya forma struny:) Tj
+ET
+BT
+/F1 9 Tf
+70 599 Td
+(phi(x) = h(1 - |x|/l) pri |x| <= l) Tj
+ET
+BT
+/F1 9 Tf
+70 581 Td
+(phi(x) = 0 pri |x| > l) Tj
+ET
+BT
+/F1 10 Tf
+50 551 Td
+(Eto treugolnaya funktsiya s vershinoi v tochke (0, h).) Tj
+ET
+BT
+/F1 11 Tf
+50 516 Td
+(Shag 2. Primenenie formuly Dalambera.) Tj
+ET
+BT
+/F1 10 Tf
+50 491 Td
+(Dlya zadachi Koshi s u_t|_(t=0) = 0 formula Dalambera:) Tj
+ET
+BT
+/F1 10 Tf
+70 471 Td
+(u(x,t) = [phi(x - ct) + phi(x + ct)] / 2) Tj
+ET
+BT
+/F1 10 Tf
+50 441 Td
+(Eta formula pokazyvaet, chto reshenie predstavlyaet soboi) Tj
+ET
+BT
+/F1 10 Tf
+50 423 Td
+(superpozitsiyu dvukh voln:) Tj
+ET
+BT
+/F1 9 Tf
+70 403 Td
+(- Volna (1/2)*phi(x - ct) dvizhetsya vpravo so skorostyu c) Tj
+ET
+BT
+/F1 9 Tf
+70 385 Td
+(- Volna (1/2)*phi(x + ct) dvizhetsya vlevo so skorostyu c) Tj
+ET
+BT
+/F1 10 Tf
+50 355 Td
+(Kazhdaya iz etikh voln imeet amplitudu h/2 (polovina ot iskhodnoi).) Tj
+ET
+BT
+/F1 11 Tf
+50 315 Td
+(Shag 3. Postroenie profilya v razlichnye momenty vremeni.) Tj
+ET
+BT
+/F1 10 Tf
+50 285 Td
+(Pri t = 0:) Tj
+ET
+BT
+/F1 9 Tf
+70 265 Td
+(u(x,0) = phi(x) - iskhodnyi treugolnyi profil s vysotoi h) Tj
+ET
+BT
+/F1 10 Tf
+50 235 Td
+(Pri 0 < t < l/c:) Tj
+ET
+BT
+/F1 9 Tf
+70 215 Td
+(Pravaya poluvolna s tsentrom v ct, levaya v -ct.) Tj
+ET
+BT
+/F1 9 Tf
+70 197 Td
+(Obe poluvolny imeyut vysotu h/2.) Tj
+ET
+BT
+/F1 9 Tf
+70 179 Td
+(Pravaya oblast: [ct - l, ct + l]) Tj
+ET
+BT
+/F1 9 Tf
+70 161 Td
+(Levaya oblast: [-ct - l, -ct + l]) Tj
+ET
+BT
+/F1 10 Tf
+50 131 Td
+(Pri t = l/c:) Tj
+ET
+BT
+/F1 9 Tf
+70 111 Td
+(Dve poluvolny tolko kasayutsya v tochke x = 0.) Tj
+ET
+BT
+/F1 9 Tf
+70 93 Td
+(Kazhdaya imeet vysotu h/2.) Tj
+ET
+BT
+/F1 10 Tf
+50 63 Td
+(Pri t > l/c:) Tj
+ET
+BT
+/F1 9 Tf
+70 43 Td
+(Volny polnostyu raskhodyatsya.) Tj
+ET
+BT
+/F1 9 Tf
+70 25 Td
+(Mezhdu nimi obrazuetsya ploskaya oblast, gde u = 0.) Tj
+ET
+BT
+/F1 12 Tf
+50 -15 Td
+(OTVET:) Tj
+ET
+BT
+/F1 11 Tf
+70 -40 Td
+(u(x,t) = (1/2) * [phi(x - ct) + phi(x + ct)]) Tj
+ET
+BT
+/F1 9 Tf
+70 -65 Td
+(gde phi(x) = h(1 - |x|/l) pri |x| <= l, phi(x) = 0 pri |x| > l) Tj
+ET
+BT
+/F1 10 Tf
+50 -95 Td
+(Profil struny predstavlyaet soboi dve treugolnye poluvolny) Tj
+ET
+BT
+/F1 10 Tf
+50 -113 Td
+(amplitudoi h/2 kazhdaya, raskhodyashiesya ot tsentra) Tj
+ET
+BT
+/F1 10 Tf
+50 -131 Td
+(v protivopolozhnykh napravleniyakh so skorostyu c.) Tj
+ET
+
+endstream
+endobj
+9 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 10
+0000000000 65535 f
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000256 00000 n 
+0000000385 00000 n 
+0000000514 00000 n 
+0000002789 00000 n 
+0000004677 00000 n 
+0000007450 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+7547
+%%EOF

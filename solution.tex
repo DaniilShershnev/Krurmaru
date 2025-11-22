@@ -1,0 +1,418 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{tikz}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+
+\title{Контрольная работа №1 \\ Уравнения математической физики}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Задача 1. Классификация уравнений второго порядка}
+
+\textbf{Условие:} Решить уравнение, классифицировать его, привести к каноническому виду и найти общее решение:
+\begin{equation}
+(x-y)u_{xy} - u_x + u_y = 0
+\end{equation}
+
+\subsection*{Решение:}
+
+\textbf{Шаг 1. Классификация уравнения.}
+
+Запишем уравнение в стандартной форме:
+$$Au_{xx} + 2Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G$$
+
+В нашем случае:
+\begin{itemize}
+    \item $A = 0$ (нет члена $u_{xx}$)
+    \item $2B = x-y$, то есть $B = \frac{x-y}{2}$
+    \item $C = 0$ (нет члена $u_{yy}$)
+    \item $D = -1$
+    \item $E = 1$
+    \item $F = 0$
+    \item $G = 0$
+\end{itemize}
+
+Вычислим дискриминант:
+$$\Delta = B^2 - AC = \left(\frac{x-y}{2}\right)^2 - 0 \cdot 0 = \frac{(x-y)^2}{4} > 0 \text{ при } x \neq y$$
+
+\textbf{Вывод:} Уравнение \textbf{гиперболического типа} при $x \neq y$.
+
+\textbf{Шаг 2. Нахождение характеристик.}
+
+Для уравнения с $A = 0$ и $C = 0$ характеристики находятся из уравнения:
+$$A(dy)^2 - 2B\,dx\,dy + C(dx)^2 = 0$$
+$$-(x-y)\,dx\,dy = 0$$
+
+Это уравнение выполняется при $dx = 0$ или $dy = 0$, что дает два семейства характеристик:
+\begin{align}
+\xi &= x = \text{const} \\
+\eta &= y = \text{const}
+\end{align}
+
+\textbf{Вывод:} Уравнение уже записано в канонических переменных $(x, y)$.
+
+\textbf{Шаг 3. Нахождение общего решения.}
+
+Будем искать решения различного вида.
+
+\textbf{а) Решения вида $u = f(x) + g(y)$:}
+
+Если $u = f(x) + g(y)$, то:
+$$u_x = f'(x), \quad u_y = g'(y), \quad u_{xy} = 0$$
+
+Подставляя в уравнение:
+$$(x-y) \cdot 0 - f'(x) + g'(y) = 0$$
+$$g'(y) = f'(x)$$
+
+Так как левая часть зависит только от $y$, а правая только от $x$, обе части равны константе $C$:
+$$f'(x) = C, \quad g'(y) = C$$
+$$f(x) = Cx + C_1, \quad g(y) = Cy + C_2$$
+
+Получаем первое семейство решений:
+$$u_1 = C(x+y) + D$$
+
+\textbf{Проверка:}
+$$u_x = C, \quad u_y = C, \quad u_{xy} = 0$$
+$$(x-y) \cdot 0 - C + C = 0 \quad \checkmark$$
+
+\textbf{б) Решения вида $u = F(xy)$:}
+
+Пусть $u = F(s)$, где $s = xy$. Тогда:
+$$u_x = F'(s) \cdot y, \quad u_y = F'(s) \cdot x, \quad u_{xy} = F''(s) \cdot xy + F'(s)$$
+
+Подставляя в уравнение:
+$$(x-y)[F''(s) \cdot xy + F'(s)] - F'(s) \cdot y + F'(s) \cdot x = 0$$
+$$(x-y) \cdot xy \cdot F''(s) + (x-y)F'(s) - yF'(s) + xF'(s) = 0$$
+$$(x-y) \cdot xy \cdot F''(s) + 2(x-y)F'(s) = 0$$
+$$(x-y)[xy \cdot F''(s) + 2F'(s)] = 0$$
+
+При $x \neq y$:
+$$s \cdot F''(s) + 2F'(s) = 0$$
+$$\frac{F''(s)}{F'(s)} = -\frac{2}{s}$$
+
+Интегрируя:
+$$\ln|F'(s)| = -2\ln|s| + \text{const}$$
+$$F'(s) = \frac{A}{s^2}$$
+$$F(s) = -\frac{A}{s} + B = -\frac{A}{xy} + B$$
+
+Получаем второе семейство решений:
+$$u_2 = -\frac{A}{xy} + B$$
+
+\textbf{Проверка:}
+$$u_x = \frac{A}{x^2 y}, \quad u_y = \frac{A}{xy^2}, \quad u_{xy} = -\frac{A}{x^2 y^2}$$
+$$(x-y) \cdot \left(-\frac{A}{x^2 y^2}\right) - \frac{A}{x^2 y} + \frac{A}{xy^2} = -\frac{A(x-y)}{x^2 y^2} - \frac{Ay}{x^2 y^2} + \frac{Ax}{x^2 y^2}$$
+$$= \frac{-Ax + Ay - Ay + Ax}{x^2 y^2} = 0 \quad \checkmark$$
+
+\textbf{в) Решения вида $u = G(x/y)$:}
+
+Пусть $u = G(t)$, где $t = x/y$. Тогда:
+$$u_x = G'(t) \cdot \frac{1}{y}, \quad u_y = G'(t) \cdot \frac{-x}{y^2}$$
+$$u_{xy} = -\frac{x}{y^3}G''(t) - \frac{1}{y^2}G'(t)$$
+
+Подставляя и упрощая (умножая на $y^3$):
+$$-x(x-y)G''(t) - 2xyG'(t) = 0$$
+
+При $x \neq 0$:
+$$(x-y)G''(t) + 2yG'(t) = 0$$
+
+Учитывая, что $x = ty$:
+$$y(t-1)G''(t) + 2yG'(t) = 0$$
+$$(t-1)G''(t) + 2G'(t) = 0$$
+$$\frac{G''(t)}{G'(t)} = -\frac{2}{t-1}$$
+
+Интегрируя:
+$$G'(t) = \frac{A}{(t-1)^2}$$
+$$G(t) = -\frac{A}{t-1} + B$$
+
+Следовательно:
+$$u = -\frac{A}{x/y - 1} + B = -\frac{Ay}{x-y} + B$$
+
+Получаем третье семейство решений:
+$$u_3 = \frac{Cy}{x-y} + D$$
+
+\textbf{Проверка:}
+$$u_x = \frac{Cy}{(x-y)^2}, \quad u_y = -\frac{Cx}{(x-y)^2}$$
+$$u_{xy} = \frac{C}{(x-y)^2} + \frac{2Cy}{(x-y)^3}$$
+$$(x-y)\left[\frac{C}{(x-y)^2} + \frac{2Cy}{(x-y)^3}\right] - \frac{Cy}{(x-y)^2} - \frac{Cx}{(x-y)^2}$$
+$$= \frac{C(x-y) + 2Cy - Cy - Cx}{(x-y)^2} = \frac{Cx - Cy + 2Cy - Cy - Cx}{(x-y)^2} = 0 \quad \checkmark$$
+
+\textbf{г) Аналогично можно показать, что} $u_4 = \frac{Kx}{x-y}$ также является решением.
+
+\subsection*{Общее решение:}
+
+Поскольку уравнение линейное и однородное, общее решение представляет собой линейную комбинацию найденных решений:
+
+\begin{equation}
+\boxed{u(x,y) = A(x+y) + \frac{B}{xy} + \frac{Cx + Dy}{x-y} + E}
+\end{equation}
+
+где $A, B, C, D, E$ --- произвольные константы.
+
+Или в эквивалентной форме:
+\begin{equation}
+\boxed{u(x,y) = C_1(x+y) + \frac{C_2}{xy} + \frac{C_3 x}{x-y} + \frac{C_4 y}{x-y} + C_5}
+\end{equation}
+
+\newpage
+
+\section*{Задача 2. Задача Коши для волнового уравнения с источником}
+
+\textbf{Условие:} Решить задачу Коши:
+\begin{equation}
+\begin{cases}
+u_{tt} = 25u_{xx} + \sin x \\
+u|_{t=0} = 1 \\
+u_t|_{t=0} = 1
+\end{cases}
+\end{equation}
+
+\subsection*{Решение:}
+
+Уравнение $u_{tt} = 25u_{xx} + \sin x$ является неоднородным волновым уравнением со скоростью распространения $c = 5$.
+
+\textbf{Шаг 1. Решение однородного уравнения.}
+
+Рассмотрим сначала однородное уравнение:
+$$u_{tt} = 25u_{xx}$$
+
+с начальными условиями:
+$$u|_{t=0} = \varphi(x), \quad u_t|_{t=0} = \psi(x)$$
+
+По формуле Даламбера решение имеет вид:
+$$u_0(x,t) = \frac{\varphi(x-ct) + \varphi(x+ct)}{2} + \frac{1}{2c}\int_{x-ct}^{x+ct} \psi(s)\,ds$$
+
+\textbf{Шаг 2. Учет неоднородности через интеграл Дюамеля.}
+
+Для неоднородного уравнения $u_{tt} = c^2 u_{xx} + f(x,t)$ с нулевыми начальными условиями решение дается интегралом Дюамеля:
+$$u_f(x,t) = \int_0^t \left[\frac{1}{2c}\int_{x-c(t-\tau)}^{x+c(t-\tau)} f(s,\tau)\,ds\right] d\tau$$
+
+В нашем случае $f(x,t) = \sin x$ (не зависит от $t$), поэтому:
+$$u_f(x,t) = \int_0^t \left[\frac{1}{2c}\int_{x-c(t-\tau)}^{x+c(t-\tau)} \sin s\,ds\right] d\tau$$
+
+\textbf{Шаг 3. Вычисление интеграла от источника.}
+
+Сначала вычислим внутренний интеграл:
+$$\int_{x-c(t-\tau)}^{x+c(t-\tau)} \sin s\,ds = [-\cos s]_{x-c(t-\tau)}^{x+c(t-\tau)}$$
+$$= -\cos[x+c(t-\tau)] + \cos[x-c(t-\tau)]$$
+
+Используя формулу $\cos(\alpha) - \cos(\beta) = -2\sin\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)$:
+
+$$\cos[x-c(t-\tau)] - \cos[x+c(t-\tau)] = 2\sin(x)\sin[c(t-\tau)]$$
+
+Поэтому:
+$$u_f(x,t) = \int_0^t \frac{1}{2c} \cdot 2\sin(x)\sin[c(t-\tau)]\,d\tau = \frac{\sin x}{c}\int_0^t \sin[c(t-\tau)]\,d\tau$$
+
+Делаем замену $w = c(t-\tau)$, $dw = -c\,d\tau$:
+$$u_f(x,t) = \frac{\sin x}{c} \cdot \frac{1}{c}\int_0^{ct} \sin w\,dw = \frac{\sin x}{c^2}[-\cos w]_0^{ct}$$
+$$= \frac{\sin x}{c^2}(1 - \cos(ct))$$
+
+При $c = 5$:
+$$u_f(x,t) = \frac{\sin x}{25}(1 - \cos(5t))$$
+
+\textbf{Шаг 4. Решение с начальными условиями.}
+
+Теперь применим формулу Даламбера для однородного уравнения с нашими начальными условиями:
+$$\varphi(x) = 1, \quad \psi(x) = 1$$
+
+$$u_0(x,t) = \frac{1 + 1}{2} + \frac{1}{10}\int_{x-5t}^{x+5t} 1\,ds = 1 + \frac{1}{10} \cdot 10t = 1 + t$$
+
+\textbf{Шаг 5. Полное решение.}
+
+Полное решение задачи Коши:
+$$u(x,t) = u_0(x,t) + u_f(x,t)$$
+
+\begin{equation}
+\boxed{u(x,t) = 1 + t + \frac{\sin x}{25}(1 - \cos(5t))}
+\end{equation}
+
+\textbf{Проверка решения:}
+
+Проверим начальные условия:
+$$u(x,0) = 1 + 0 + \frac{\sin x}{25}(1 - \cos 0) = 1 + 0 = 1 \quad \checkmark$$
+
+$$u_t = 1 + \frac{\sin x}{25} \cdot 5\sin(5t) = 1 + \frac{\sin x}{5}\sin(5t)$$
+$$u_t(x,0) = 1 + \frac{\sin x}{5} \cdot 0 = 1 \quad \checkmark$$
+
+Проверим уравнение:
+$$u_{tt} = \frac{\sin x}{25} \cdot 25 \cdot (-\cos(5t)) = -\sin x \cos(5t)$$
+$$u_{xx} = \frac{-\sin x}{25}(1 - \cos(5t))$$
+$$25u_{xx} = -\sin x(1 - \cos(5t)) = -\sin x + \sin x \cos(5t)$$
+$$u_{tt} - 25u_{xx} = -\sin x \cos(5t) + \sin x - \sin x \cos(5t) = \sin x \quad \checkmark$$
+
+\newpage
+
+\section*{Задача 3. Построение профиля струны}
+
+\textbf{Условие:} Построить профиль струны для волнового уравнения:
+\begin{equation}
+\begin{cases}
+u_{tt} = c^2 u_{xx} \\
+u|_{t=0} = \varphi(x) \text{ (по рис. 9)} \\
+u_t|_{t=0} = 0
+\end{cases}
+\end{equation}
+
+где начальная форма струны $\varphi(x)$ задана графиком:
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    \draw[->] (-3.5,0) -- (3.5,0) node[right] {$x$};
+    \draw[->] (0,0) -- (0,3.5) node[above] {};
+
+    % Треугольный профиль
+    \draw[thick] (-2.5,0) node[below] {$-l$} -- (0,3) node[above] {$h$} -- (2.5,0) node[below] {$l$};
+
+    % Пунктирные линии
+    \draw[dashed] (-0.625,0) node[below] {$-l/4$} -- (-0.625,1.5);
+    \draw[dashed] (0.625,0) node[below] {$l/4$} -- (0.625,1.5);
+    \draw[dashed] (-0.625,1.5) -- (0.625,1.5) node[right] {$h/2$};
+
+    % Точки
+    \fill (0,0) circle (1.5pt) node[below] {$0$};
+    \fill (0,3) circle (1.5pt);
+    \fill (-2.5,0) circle (1.5pt);
+    \fill (2.5,0) circle (1.5pt);
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Решение:}
+
+\textbf{Шаг 1. Запись начальной функции.}
+
+Из графика видно, что начальная форма струны:
+$$\varphi(x) = \begin{cases}
+h\left(1 + \frac{x}{l}\right), & -l \leq x \leq 0 \\
+h\left(1 - \frac{x}{l}\right), & 0 \leq x \leq l \\
+0, & |x| > l
+\end{cases}$$
+
+Это можно записать компактно:
+$$\varphi(x) = \begin{cases}
+h\left(1 - \frac{|x|}{l}\right), & |x| \leq l \\
+0, & |x| > l
+\end{cases}$$
+
+\textbf{Шаг 2. Применение формулы Даламбера.}
+
+Для задачи Коши с $u_t|_{t=0} = 0$ формула Даламбера имеет вид:
+$$u(x,t) = \frac{\varphi(x-ct) + \varphi(x+ct)}{2}$$
+
+Эта формула показывает, что решение представляет собой суперпозицию двух волн:
+\begin{itemize}
+    \item Волна $\frac{1}{2}\varphi(x-ct)$ --- движется вправо со скоростью $c$
+    \item Волна $\frac{1}{2}\varphi(x+ct)$ --- движется влево со скоростью $c$
+\end{itemize}
+
+Каждая из этих волн имеет амплитуду $h/2$ (половину от исходной).
+
+\textbf{Шаг 3. Построение профиля в различные моменты времени.}
+
+\textbf{При $t = 0$:}
+$$u(x,0) = \frac{\varphi(x) + \varphi(x)}{2} = \varphi(x)$$
+--- исходный треугольный профиль с вершиной в точке $(0, h)$.
+
+\textbf{При $0 < t < \frac{l}{c}$:}
+
+Правая полуволна (с центром в $ct$):
+$$\varphi_R(x,t) = \frac{1}{2}\varphi(x-ct) = \begin{cases}
+\frac{h}{2}\left(1 - \frac{|x-ct|}{l}\right), & |x-ct| \leq l \\
+0, & |x-ct| > l
+\end{cases}$$
+
+Левая полуволна (с центром в $-ct$):
+$$\varphi_L(x,t) = \frac{1}{2}\varphi(x+ct) = \begin{cases}
+\frac{h}{2}\left(1 - \frac{|x+ct|}{l}\right), & |x+ct| \leq l \\
+0, & |x+ct| > l
+\end{cases}$$
+
+Правая полуволна занимает область $[ct-l, ct+l]$, левая --- $[-ct-l, -ct+l]$.
+
+\textbf{При $t = \frac{l}{c}$:}
+
+Две полуволны только касаются в точке $x = 0$. Каждая имеет высоту $h/2$.
+
+\textbf{При $t > \frac{l}{c}$:}
+
+Волны полностью расходятся. Правая волна движется вправо, левая --- влево. Между ними образуется плоская область, где $u = 0$.
+
+\subsection*{Графическое представление:}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    % t = 0
+    \begin{scope}[shift={(0,0)}]
+        \draw[->] (-3.5,0) -- (3.5,0) node[right] {$x$};
+        \draw[->] (0,0) -- (0,3.5);
+        \draw[thick,blue] (-2.5,0) -- (0,3) -- (2.5,0);
+        \node at (0,4) {$t = 0$};
+        \node at (0,3.3) {$h$};
+        \node at (-2.5,-0.3) {$-l$};
+        \node at (2.5,-0.3) {$l$};
+    \end{scope}
+
+    % t = l/(4c)
+    \begin{scope}[shift={(8,0)}]
+        \draw[->] (-3.5,0) -- (3.5,0) node[right] {$x$};
+        \draw[->] (0,0) -- (0,3.5);
+        \draw[thick,red] (-3.125,0) -- (-0.625,1.5) -- (0.625,0);
+        \draw[thick,red] (-0.625,0) -- (0.625,1.5) -- (3.125,0);
+        \node at (0,4) {$t = \frac{l}{4c}$};
+        \node at (1.2,1.8) {$h/2$};
+        \node at (-1.2,1.8) {$h/2$};
+    \end{scope}
+\end{tikzpicture}
+
+\vspace{1cm}
+
+\begin{tikzpicture}[scale=0.9]
+    % t = l/(2c)
+    \begin{scope}[shift={(0,0)}]
+        \draw[->] (-3.5,0) -- (3.5,0) node[right] {$x$};
+        \draw[->] (0,0) -- (0,3.5);
+        \draw[thick,red] (-3.75,0) -- (-1.25,1.5) -- (0,0);
+        \draw[thick,red] (0,0) -- (1.25,1.5) -- (3.75,0);
+        \node at (0,4) {$t = \frac{l}{2c}$};
+        \node at (1.8,1.8) {$h/2$};
+        \node at (-1.8,1.8) {$h/2$};
+    \end{scope}
+
+    % t = l/c
+    \begin{scope}[shift={(8,0)}]
+        \draw[->] (-5,0) -- (5,0) node[right] {$x$};
+        \draw[->] (0,0) -- (0,3.5);
+        \draw[thick,red] (-4.5,0) -- (-2.5,1.5) -- (-0.5,0);
+        \draw[thick,red] (0.5,0) -- (2.5,1.5) -- (4.5,0);
+        \node at (0,4) {$t = \frac{l}{c}$};
+        \node at (3,1.8) {$h/2$};
+        \node at (-3,1.8) {$h/2$};
+        \draw[<->] (-0.5,-0.5) -- (0.5,-0.5) node[midway,below] {зазор};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Ответ:}
+
+Решение задачи Коши:
+\begin{equation}
+\boxed{u(x,t) = \frac{1}{2}\left[\varphi(x-ct) + \varphi(x+ct)\right]}
+\end{equation}
+
+где
+$$\varphi(x) = \begin{cases}
+h\left(1 - \frac{|x|}{l}\right), & |x| \leq l \\
+0, & |x| > l
+\end{cases}$$
+
+Профиль струны представляет собой две треугольные полуволны амплитудой $h/2$ каждая, расходящиеся от центра в противоположных направлениях со скоростью $c$.
+
+\end{document}
